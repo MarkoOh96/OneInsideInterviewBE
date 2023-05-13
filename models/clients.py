@@ -3,7 +3,7 @@ from model import db
 class Client(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
-    info = db.Column(db.String, nullable=False)
+    info = db.Column(db.String, nullable=True)
     img = db.Column(db.String, nullable=True)
     
     def to_dict(self):
