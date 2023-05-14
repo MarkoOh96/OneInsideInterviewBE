@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 from model import db
 from routes.client_routes import client_routes
 from routes.developer_routes import developer_routes
@@ -8,6 +9,7 @@ import requests
 
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///database.db'
 
 db.init_app(app)
